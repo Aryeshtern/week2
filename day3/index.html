@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        direction: rtl;
+        align-items: center;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px;
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 1000px;
+      }
+      #container {
+        display: flex;
+        max-width: 1000px;
+      }
+      input[type="text"] {
+        width: 500px;
+        padding: 10px;
+        margin: 10px;
+      }
+      input[type="submit"] {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+
+      #filterResults {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+      }
+      table {
+        width: 600px;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: right;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+
+      #editPopup{
+        position: fixed;
+        top: 40%;
+        display: none;
+        height: 200px;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #888;
+      }
+
+      #editInput{
+        width: 90%;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .btn-completed{
+        margin: 3px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        float: right;
+      }
+
+      .btn-delete{
+        margin: 3px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: green;
+        color: white;
+        cursor: pointer;
+        float: right;
+      }
+      .btn-edit{
+        margin: 3px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+        float: right;
+      }
+    </style>
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1 id="header">רשימת משימות</h1>
+      <form id="AddTaskForm">
+        <input
+          type="text"
+          id="taskInput"
+          name="task"
+          placeholder="הכנס משימה חדשה"
+          required
+        />
+        <input type="submit" value="הוספת משימה" />
+      </form>
+      <button id="filterResults">סנן לפי מה שכבר הושלם</button>
+      <div id="container">
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>מזהה</th>
+              <th>משימה</th>
+              <th>סטאטוס</th>
+              <th>פעולות</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Tasks will be added dynamically here -->
+          </tbody>
+        </table>
+      </div>
+      <div id="editPopup">
+        <h2>עריכת משימה</h2>
+        <form id="editform">
+        <input id="editInput" type="text" required />
+        <div id="edit-buttons">
+            <button type="submit">שמור</button>
+            <button id="cancelChanges" onclick="closeEditPopup()">ביטול</button>
+        </div>
+    </form>
+      </div>
+    </main>
+  </body>
+</html>

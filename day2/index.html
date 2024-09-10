@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="script.js"></script>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      td {
+        padding: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .container {
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1 -->
+      <!-- id="myHeader" -->
+      <!-- onmouseover="changeText()" -->
+      <!-- onmouseleave="revertText()" -->
+      <!-- onclick="getStyle()" -->
+    <!-- > -->
+      <!-- Mouse out -->
+    <!-- </h1> -->
+
+    <!-- <div -->
+      <!-- id="box" -->
+      <!-- style="height: 100px; width: 100px; background-color: brown" -->
+    <!-- ></div> -->
+    <!-- <button id="Meteg" onclick="controlBox()">click</button> -->
+    <!-- <select id="selector" name="selector" onclick="selectControl()"> -->
+      <!-- <option value="red">Red</option> -->
+      <!-- <option value="green">Green</option> -->
+      <!-- <option value="blue">Blue</option> -->
+    <!-- </select> -->
+    <!-- <button id="boxDisplay" onclick="boxDisplay()">Hide Box</button> -->
+    <!-- <hr /> -->
+    <!-- <input -->
+      <!-- type="text" -->
+      <!-- id="inputOption" -->
+      <!-- placeholder="edd a option to selector" -->
+      <!-- required -->
+    <!-- /> -->
+    <!-- <button id="selectorAdd" onclick="addOption()">Add Option</button> -->
+    <!-- <hr /> -->
+    <!-- <div -->
+      <!-- id="txtbox" -->
+      <!-- style=" -->
+        <!-- /* height: 400px; */ -->
+        <!-- /* width: 400px; */ -->
+        <!-- /* background-color: black; */ -->
+        <!-- /* padding: 10px; */ -->
+        <!-- /* display: flex; */ -->
+      <!-- /* " */ -->
+    <!-- > -->
+      <!-- <span id="text" style="color: white; font-size: 40px">text</span> -->
+    <!-- </div> -->
+    <!-- <div -->
+      <!-- class="grid-container" -->
+      <!-- style="height: 300px; width: 300px; background-color: aquamarine" -->
+    <!-- > -->
+      <!-- <div class="grid-item" onclick="changeLocation('nw')">nw</div> -->
+      <!-- <div class="grid-item" onclick="changeLocation('n')">n</div> -->
+      <!-- <div class="grid-item" onclick="changeLocation('ne')">ne</div> -->
+      <!-- <div class="grid-item" onclick="changeLocation('w')">w</div> -->
+      <!-- <div class="grid-item" onclick="changeLocation('c')">c</div> -->
+      <!-- <div class="grid-item" onclick="changeLocation('e')">e</div> -->
+      <!-- <div class="grid-item" onclick="changeLocation('sw')">sw</div> -->
+      <!-- <div class="grid-item" onclick="changeLocation('s')">s</div> -->
+      <!-- <div class="grid-item" onclick="changeLocation('se')">se</div> -->
+    <!-- </div> -->
+    <!-- <hr /> -->
+    <!-- <div class="container"> -->
+      <!-- <h2>Add Values to Table</h2> -->
+      <!-- <form id="dataForm"> -->
+        <!-- <label for="name">Name:</label><br /> -->
+        <!-- <input type="text" id="name" name="name" required /><br /> -->
+        <!-- <label for="age">Age:</label><br /> -->
+        <!-- <input type="number" id="age" name="age" required /><br /> -->
+        <!-- <label for="gender">Gender:</label><br /> -->
+        <!-- <select id="gender" name="gender" required> -->
+          <!-- <option value="male">Male</option> -->
+          <!-- <option value="female">Female</option></select -->
+        <!-- ><br /> -->
+        <!-- <button type="submit">Add to Table</button> -->
+      <!-- </form> -->
+      <!-- <table id="dataTable"> -->
+        <!-- <thead> -->
+          <!-- <tr> -->
+            <!-- <th>ID</th> -->
+            <!-- <th>Name</th> -->
+            <!-- <th>Age</th> -->
+            <!-- <th>Gender</th> -->
+          <!-- </tr> -->
+        <!-- </thead> -->
+        <!-- <tbody> -->
+          <!-- Rows will be added here -->
+        <!-- </tbody> -->
+      <!-- </table> -->
+    <!-- </div> -->
+    <div id="board">
+      <div class="box" id="1"></div>
+      <div class="box" id="2"></div>
+      <div class="box" id="3"></div>
+      <div class="box" id="4"></div>
+      <div class="box" id="5"></div>
+      <div class="box" id="6"></div>
+    </div>
+  </body>
+</html>
