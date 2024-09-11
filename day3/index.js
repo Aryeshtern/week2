@@ -16,7 +16,6 @@ function addTask() {
     tasks.push(newTask);
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
-
   console.log("משימה נוספה בהצלחה");
 }
 
@@ -27,12 +26,11 @@ function completeTask(id) {
   let task = tasks.find((task) => task.id === id);
   if (task.completed === "לא") {
     task.completed = "כן";
-    
   } else {
     task.completed = "לא";
   }
+  localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTasks();
-    localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function deleteTask(id) {
@@ -103,9 +101,10 @@ function fillTable(tasks) {
     cell1.textContent = element.id.slice(length - 3, length) + "*".repeat(length - 3);
     cell2.textContent = element.task;
     cell3.textContent = element.completed;
-    cell4.innerHTML = `<button id="btn-is-completed" class="btn-completed" onclick="completeTask('${element.id}')">הושלם</button>
-        <button class="btn-delete" onclick="deleteTask('${element.id}')">מחק</button>
-        <button class="btn-edit" onclick="openEditPopup('${element.id}')">ערוך</button>`;
+    let textOnCompletedBotton = element.completed === "לא"? "הושלם" : "לא הושלמה"; 
+    cell4.innerHTML = `<button class="btn-completed btn" onclick="completeTask('${element.id}')">${textOnCompletedBotton}</button>
+        <button class="btn-delete btn" onclick="deleteTask('${element.id}')">מחק</button>
+        <button class="btn-edit btn" onclick="openEditPopup('${element.id}')">ערוך</button>`;
   });
 }
 

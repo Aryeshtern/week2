@@ -10,7 +10,6 @@
         margin: 0;
         padding: 0;
         direction: rtl;
-        align-items: center;
       }
 
       main {
@@ -19,19 +18,29 @@
         flex-direction: column;
         align-items: center;
         margin: 30px;
-        background-color: #f5f5f5;
+        gap: 20px;
+        background-color: #f9f4f4;
         padding: 20px;
         border-radius: 10px;
-        max-width: 1000px;
+        max-width: 100%;
+
       }
       #container {
-        display: flex;
         max-width: 1000px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 100%;
       }
       input[type="text"] {
         width: 500px;
         padding: 10px;
-        margin: 10px;
       }
       input[type="submit"] {
         margin: 10px;
@@ -61,6 +70,7 @@
       td {
         border: 1px solid black;
       }
+
       th,
       td {
         padding: 8px;
@@ -70,76 +80,89 @@
         background-color: #f2f2f2;
       }
 
-      #editPopup{
+      #editPopup {
         position: fixed;
-        top: 40%;
-        display: none;
+        top: 30%;
+        display: flex;
         height: 200px;
         justify-content: center;
+        flex-direction: column;
         align-items: center;
         width: 400px;
         border-radius: 10px;
-        box-shadow: 4px 4px 4px;
         background-color: white;
         padding: 20px;
-        border: 1px solid #888;
+        border: 1px solid black;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       }
 
-      #editInput{
-        width: 90%;
+      #editInput {
+        width: 100%;
         padding: 10px;
-        margin: 10px;
+        margin: 0 0 10px 0;
       }
 
-      .btn-completed{
+
+      .btn-completed {
         margin: 3px;
         padding: 10px 20px;
         border: none;
-        border-radius: 5px;
-        background-color: red;
-        color: white;
-        cursor: pointer;
-        float: right;
-      }
-
-      .btn-delete{
-        margin: 3px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
         background-color: green;
         color: white;
         cursor: pointer;
         float: right;
       }
-      .btn-edit{
+
+      .btn-delete {
         margin: 3px;
         padding: 10px 20px;
         border: none;
-        border-radius: 5px;
-        background-color: blue;
+        background-color: red;
         color: white;
         cursor: pointer;
         float: right;
+      }
+      .btn-edit {
+        background-color: rgb(164, 206, 234);
+        float: right;
+      }
+
+      #btn-saveChanges{
+        background-color: black;
+        float: right;
+      }
+
+      #btn-cancelChanges{
+        background-color: gray;
+        float: right;
+      }
+
+      .btn{
+        margin: 3px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 15px;
+        color: white;
+        cursor: pointer;
       }
     </style>
     <script defer src="index.js"></script>
   </head>
   <body>
     <main>
-      <h1 id="header">רשימת משימות</h1>
-      <form id="AddTaskForm">
-        <input
-          type="text"
-          id="taskInput"
-          name="task"
-          placeholder="הכנס משימה חדשה"
-          required
-        />
-        <input type="submit" value="הוספת משימה" />
-      </form>
-      <button id="filterResults">סנן לפי מה שכבר הושלם</button>
       <div id="container">
+        <h1 id="header">רשימת משימות</h1>
+        <form id="AddTaskForm">
+          <input
+            type="text"
+            id="taskInput"
+            name="task"
+            placeholder="הכנס משימה חדשה"
+            required
+          />
+          <input type="submit" value="הוספת משימה" />
+        </form>
+        <button id="filterResults">סנן לפי מה שכבר הושלם</button>
         <table id="dataTable">
           <thead>
             <tr>
@@ -157,12 +180,12 @@
       <div id="editPopup">
         <h2>עריכת משימה</h2>
         <form id="editform">
-        <input id="editInput" type="text" required />
-        <div id="edit-buttons">
-            <button type="submit">שמור</button>
-            <button id="cancelChanges" onclick="closeEditPopup()">ביטול</button>
-        </div>
-    </form>
+          <input id="editInput" type="text" required />
+          <div id="edit-buttons">
+            <button class="btn" id="btn-saveChanges" type="submit">שמור</button>
+            <button class="btn" id="btn-cancelChanges" onclick="closeEditPopup()">ביטול</button>
+          </div>
+        </form>
       </div>
     </main>
   </body>
